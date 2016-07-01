@@ -11,6 +11,9 @@
 		353D6F131D2519D200F9CBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353D6F121D2519D200F9CBA2 /* Assets.xcassets */; };
 		353D6F211D2519D200F9CBA2 /* swift_weiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F201D2519D200F9CBA2 /* swift_weiboTests.swift */; };
 		353D6F2C1D2519D200F9CBA2 /* swift_weiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F2B1D2519D200F9CBA2 /* swift_weiboUITests.swift */; };
+		356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F96CD1D263BD800AF8E1D /* MainTabbar.swift */; };
+		356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */; };
+		356F96D21D26661E00AF8E1D /* VistorLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356F96D11D26661E00AF8E1D /* VistorLoginView.xib */; };
 		357C4A331D252308008D2B11 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357C4A321D252308008D2B11 /* MainViewController.swift */; };
 		357C4A351D252332008D2B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A341D252332008D2B11 /* Main.storyboard */; };
 		357C4A371D2524BE008D2B11 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A361D2524BE008D2B11 /* Home.storyboard */; };
@@ -53,6 +56,9 @@
 		353D6F271D2519D200F9CBA2 /* swift-weiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-weiboUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353D6F2B1D2519D200F9CBA2 /* swift_weiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_weiboUITests.swift; sourceTree = "<group>"; };
 		353D6F2D1D2519D200F9CBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356F96CD1D263BD800AF8E1D /* MainTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
+		356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		356F96D11D26661E00AF8E1D /* VistorLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VistorLoginView.xib; sourceTree = "<group>"; };
 		357C4A321D252308008D2B11 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		357C4A341D252332008D2B11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		357C4A361D2524BE008D2B11 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -227,7 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				357C4A321D252308008D2B11 /* MainViewController.swift */,
+				356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */,
+				356F96D11D26661E00AF8E1D /* VistorLoginView.xib */,
 				357C4A341D252332008D2B11 /* Main.storyboard */,
+				356F96CD1D263BD800AF8E1D /* MainTabbar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				357C4A351D252332008D2B11 /* Main.storyboard in Resources */,
 				357C4A491D252689008D2B11 /* Profile.storyboard in Resources */,
 				357C4A471D25267E008D2B11 /* Discover.storyboard in Resources */,
+				356F96D21D26661E00AF8E1D /* VistorLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
 				357C4A431D252658008D2B11 /* ComposeViewController.swift in Sources */,
 				353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */,
 				357C4A331D252308008D2B11 /* MainViewController.swift in Sources */,
+				356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */,
 				357C4A451D252675008D2B11 /* DiscoverViewController.swift in Sources */,
 				357C4A3B1D2525EF008D2B11 /* MessageViewController.swift in Sources */,
 				357C4A391D2524F3008D2B11 /* HomeViewController.swift in Sources */,

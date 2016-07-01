@@ -10,26 +10,44 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    @IBOutlet weak var MainTabBar: MainTabbar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addChildViewControllers();
+        MainTabBar.composeBtn.addTarget(self, action: #selector(MainViewController.composeBtnDidClick(_:)), forControlEvents: UIControlEvents.TouchUpInside);
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //按钮点击
+    func composeBtnDidClick(sender:UIButton){
+        print(#function);
     }
-    
-
+    //添加所有的子视图控制器
+    private func addChildViewControllers(){
+        //设置按钮选中颜色为橘色
+        self.tabBar.tintColor = UIColor.orangeColor();
+        addChildViewController("Home", title: "首页", imageName: "tabbar_home");
+        addChildViewController("Message", title: "消息", imageName: "tabbar_message_center");
+        addChildViewController("Discover", title: "发现", imageName: "tabbar_discover");
+        addChildViewController("Profile", title: "我的", imageName: "tabbar_profile");
+    }
+    //创建子视图
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+     函数重载，函数名一样，但参数不同
     */
+    private func addChildViewController(sbName:String, title:String, imageName:String) {
+        //获取storyboard
+        let sb = UIStoryboard(name: sbName, bundle: nil);
+        //创建导航控制器
+        let nav = sb.instantiateInitialViewController() as! UINavigationController;
+        //设置导航标题
+        nav.topViewController?.title = title;
+        //设置tabBar按钮图片
+        nav.tabBarItem.image = UIImage(named: imageName);
+        //设置tabBar选中图片
+        nav.tabBarItem.selectedImage = UIImage(named: imageName + "highlighted");
+        
+        addChildViewController(nav);
+    }
+
 
 }
