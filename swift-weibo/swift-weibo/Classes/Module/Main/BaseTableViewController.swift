@@ -12,6 +12,7 @@ class BaseTableViewController: UITableViewController {
     
     
     var userLogin = false;
+    var userLoginView:VistorLoginView?;
     override func loadView() {
         if(userLogin){
             //用户已经登录
@@ -19,8 +20,8 @@ class BaseTableViewController: UITableViewController {
             return;
         }
         //用户未登录
-        let myView = NSBundle.mainBundle().loadNibNamed("VistorLoginView", owner: nil, options: nil).last as! UIView;
-        view = myView;
+        userLoginView = NSBundle.mainBundle().loadNibNamed("VistorLoginView", owner: nil, options: nil).last as? VistorLoginView;
+        view = userLoginView;
         
     }
     

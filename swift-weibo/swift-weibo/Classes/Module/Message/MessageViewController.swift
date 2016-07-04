@@ -12,7 +12,7 @@ class MessageViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userLoginView?.setUpUIWithInfo("visitordiscover_image_message", tipText: "登录后，别人评论你的微薄，发给你的消息，都会在这里收到");
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

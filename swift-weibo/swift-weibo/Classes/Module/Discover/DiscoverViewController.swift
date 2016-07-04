@@ -12,7 +12,7 @@ class DiscoverViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userLoginView?.setUpUIWithInfo("visitordiscover_feed_image_house", tipText: "登陆后，最新、最热微博尽在掌握，不会再与实事潮流擦肩而过");
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

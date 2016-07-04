@@ -26,6 +26,7 @@
 		357C4A471D25267E008D2B11 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A461D25267E008D2B11 /* Discover.storyboard */; };
 		357C4A491D252689008D2B11 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A481D252689008D2B11 /* Profile.storyboard */; };
 		357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357C4A4A1D2526A2008D2B11 /* ProfileTableViewController.swift */; };
+		35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		357C4A461D25267E008D2B11 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		357C4A481D252689008D2B11 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		357C4A4A1D2526A2008D2B11 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorLoginView.swift; sourceTree = "<group>"; };
+		35F747FD1D2A61D700DF7E31 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				353D6F0A1D2519D200F9CBA2 /* swift-weibo */,
+				35F747FD1D2A61D700DF7E31 /* Reveal.framework */,
 				353D6F1F1D2519D200F9CBA2 /* swift-weiboTests */,
 				353D6F2A1D2519D200F9CBA2 /* swift-weiboUITests */,
 				353D6F091D2519D200F9CBA2 /* Products */,
@@ -235,6 +239,7 @@
 				357C4A321D252308008D2B11 /* MainViewController.swift */,
 				356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */,
 				356F96D11D26661E00AF8E1D /* VistorLoginView.xib */,
+				35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */,
 				357C4A341D252332008D2B11 /* Main.storyboard */,
 				356F96CD1D263BD800AF8E1D /* MainTabbar.swift */,
 			);
@@ -385,6 +390,7 @@
 				357C4A431D252658008D2B11 /* ComposeViewController.swift in Sources */,
 				353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */,
 				357C4A331D252308008D2B11 /* MainViewController.swift in Sources */,
+				35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */,
 				356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */,
 				357C4A451D252675008D2B11 /* DiscoverViewController.swift in Sources */,
 				357C4A3B1D2525EF008D2B11 /* MessageViewController.swift in Sources */,
@@ -512,8 +518,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yiyuanhanly@126.com (49LC457723)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "swift-weibo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -524,8 +540,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yiyuanhanly@126.com (49LC457723)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "swift-weibo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
