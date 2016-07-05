@@ -23,8 +23,8 @@ class MainViewController: UITabBarController {
     }
     //添加所有的子视图控制器
     private func addChildViewControllers(){
-        //设置按钮选中颜色为橘色
-        self.tabBar.tintColor = UIColor.orangeColor();
+
+        
         addChildViewController("Home", title: "首页", imageName: "tabbar_home");
         addChildViewController("Message", title: "消息", imageName: "tabbar_message_center");
         addChildViewController("Discover", title: "发现", imageName: "tabbar_discover");

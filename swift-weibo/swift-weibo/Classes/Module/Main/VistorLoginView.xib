@@ -25,7 +25,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人，回这里SD翻跟斗丰功硕德反攻倒算赋给看看" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="iQu-OP-Yoo">
-                    <rect key="frame" x="185" y="328" width="229" height="33.5"/>
+                    <rect key="frame" x="185" y="328" width="229" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -44,6 +44,14 @@
                         <action selector="LoginAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gx6-Yn-nRj"/>
                     </connections>
                 </button>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="BvV-mv-ZnM">
+                    <rect key="frame" x="253" y="156" width="94" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="Ejc-13-ArA"/>
+                        <constraint firstAttribute="height" constant="90" id="PLF-vQ-48k"/>
+                        <constraint firstAttribute="width" constant="94" id="Vn4-vm-PbW"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-HR-Fqm">
                     <rect key="frame" x="185" y="414" width="80" height="30"/>
                     <constraints>
@@ -58,12 +66,6 @@
                         <action selector="registerAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="1aG-yy-lFD"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="BvV-mv-ZnM">
-                    <rect key="frame" x="253" y="156" width="94" height="90"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="94" id="Vn4-vm-PbW"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.90980392156862744" green="0.9137254901960784" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class BaseTableViewController: UITableViewController {
+//第四步，另一个类实现VisVistorLoginViewDelegate协议
+class BaseTableViewController: UITableViewController,VisVistorLoginViewDelegate {
     
     
     var userLogin = false;
@@ -21,13 +21,28 @@ class BaseTableViewController: UITableViewController {
         }
         //用户未登录
         userLoginView = NSBundle.mainBundle().loadNibNamed("VistorLoginView", owner: nil, options: nil).last as? VistorLoginView;
+        //设置代理响应者
+        userLoginView?.loginDelegate = self;
         view = userLoginView;
+        //创建导航栏左侧按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseTableViewController.registerBtnDidClick));
+        //设置创建的导航栏按钮的文字颜色
+        //navigationController?.navigationBar.tintColor = UIColor.orangeColor();
+        //创建导航栏右侧按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BaseTableViewController.loginBtnDidClick));
         
     }
-    
+    //实现协议方法
+    func loginBtnDidClick() {
+        print("登录");
+    }
+    func registerBtnDidClick() {
+        print("注册");
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor();
 
         
     }
