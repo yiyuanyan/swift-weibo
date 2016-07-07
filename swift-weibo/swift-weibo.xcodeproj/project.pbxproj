@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		352743F11D2E1D3A007F0BB8 /* NewFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352743F01D2E1D3A007F0BB8 /* NewFeature.storyboard */; };
+		352743F31D2E1D86007F0BB8 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352743F21D2E1D86007F0BB8 /* NewFeatureViewController.swift */; };
 		353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F0B1D2519D200F9CBA2 /* AppDelegate.swift */; };
 		353D6F131D2519D200F9CBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353D6F121D2519D200F9CBA2 /* Assets.xcassets */; };
 		353D6F211D2519D200F9CBA2 /* swift_weiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F201D2519D200F9CBA2 /* swift_weiboTests.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		352743F01D2E1D3A007F0BB8 /* NewFeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewFeature.storyboard; sourceTree = "<group>"; };
+		352743F21D2E1D86007F0BB8 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		353D6F081D2519D200F9CBA2 /* swift-weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-weibo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353D6F0B1D2519D200F9CBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		353D6F121D2519D200F9CBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		352743EF1D2E1D13007F0BB8 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				352743F01D2E1D3A007F0BB8 /* NewFeature.storyboard */,
+				352743F21D2E1D86007F0BB8 /* NewFeatureViewController.swift */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		353D6EFF1D2519D200F9CBA2 = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +274,7 @@
 		357C4A2A1D252057008D2B11 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				352743EF1D2E1D13007F0BB8 /* NewFeature */,
 				3568D8071D2C99700042C448 /* OAuth */,
 				357C4A311D252277008D2B11 /* Main */,
 				357C4A2D1D252057008D2B11 /* Home */,
@@ -488,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352743F11D2E1D3A007F0BB8 /* NewFeature.storyboard in Resources */,
 				3583060C1D2B8A1D0074D497 /* Info-tvOS.plist in Resources */,
 				357C4A371D2524BE008D2B11 /* Home.storyboard in Resources */,
 				353D6F131D2519D200F9CBA2 /* Assets.xcassets in Resources */,
@@ -528,6 +543,7 @@
 				358306121D2B8A1D0074D497 /* ParameterEncoding.swift in Sources */,
 				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
+				352743F31D2E1D86007F0BB8 /* NewFeatureViewController.swift in Sources */,
 				358306101D2B8A1D0074D497 /* NetworkReachabilityManager.swift in Sources */,
 				3583061B1D2B8A1D0074D497 /* Validation.swift in Sources */,
 				358306141D2B8A1D0074D497 /* Response.swift in Sources */,

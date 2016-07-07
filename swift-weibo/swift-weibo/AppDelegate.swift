@@ -15,19 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        //手动实例化window
-        window = UIWindow.init(frame: UIScreen.mainScreen().bounds);
         window?.backgroundColor = UIColor.whiteColor();
-        window?.makeKeyAndVisible();
-        //设置window的根视图控制器
-        let sb = UIStoryboard(name: "Main",bundle: nil);
+        // Override point for customization after application launch.
+//        //手动实例化window
+//        window = UIWindow.init(frame: UIScreen.mainScreen().bounds);
+//
+//        window?.makeKeyAndVisible();
+        
         //设置全局导航栏按钮颜色
         setThemeColor();
-        //用户信息
-        print(sharedUserAccount);
-        let tabVC = sb.instantiateInitialViewController() as! UITabBarController;
-        window?.rootViewController = tabVC;
+//        //用户信息
+//        //设置window的根视图控制器
+//        let sb = UIStoryboard(name: "Main",bundle: nil);
+//        let tabVC = sb.instantiateInitialViewController() as! UITabBarController;
+//        window?.rootViewController = tabVC;
         return true
     }
     private func setThemeColor(){
