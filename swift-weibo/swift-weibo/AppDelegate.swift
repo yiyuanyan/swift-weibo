@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+var sharedUserAccount = UserAccount.loadUserAccount();
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sb = UIStoryboard(name: "Main",bundle: nil);
         //设置全局导航栏按钮颜色
         setThemeColor();
+        //用户信息
+        print(sharedUserAccount);
         let tabVC = sb.instantiateInitialViewController() as! UITabBarController;
         window?.rootViewController = tabVC;
         return true

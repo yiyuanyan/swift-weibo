@@ -10,8 +10,8 @@ import UIKit
 //第四步，另一个类实现VisVistorLoginViewDelegate协议
 class BaseTableViewController: UITableViewController,VisVistorLoginViewDelegate {
     
-    
-    var userLogin = false;
+    //用户是否登录
+    var userLogin = sharedUserAccount != nil;
     var userLoginView:VistorLoginView?;
     override func loadView() {
         if(userLogin){
@@ -35,6 +35,9 @@ class BaseTableViewController: UITableViewController,VisVistorLoginViewDelegate 
     //实现协议方法
     func loginBtnDidClick() {
         print("登录");
+        let sb = UIStoryboard(name: "OAuth", bundle: nil);
+        let vc = sb.instantiateInitialViewController()! as UIViewController;
+        presentViewController(vc, animated: true, completion: nil);
     }
     func registerBtnDidClick() {
         print("注册");

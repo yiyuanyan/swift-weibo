@@ -11,6 +11,14 @@
 		353D6F131D2519D200F9CBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353D6F121D2519D200F9CBA2 /* Assets.xcassets */; };
 		353D6F211D2519D200F9CBA2 /* swift_weiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F201D2519D200F9CBA2 /* swift_weiboTests.swift */; };
 		353D6F2C1D2519D200F9CBA2 /* swift_weiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F2B1D2519D200F9CBA2 /* swift_weiboUITests.swift */; };
+		3568D8091D2C997F0042C448 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3568D8081D2C997F0042C448 /* OAuth.storyboard */; };
+		3568D80B1D2C999C0042C448 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568D80A1D2C999C0042C448 /* OAuthViewController.swift */; };
+		3568D8181D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568D80F1D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m */; };
+		3568D8191D2CAB9D0042C448 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568D8111D2CAB9D0042C448 /* SVProgressAnimatedView.m */; };
+		3568D81A1D2CAB9D0042C448 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3568D8131D2CAB9D0042C448 /* SVProgressHUD.bundle */; };
+		3568D81B1D2CAB9D0042C448 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568D8151D2CAB9D0042C448 /* SVProgressHUD.m */; };
+		3568D81C1D2CAB9D0042C448 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568D8171D2CAB9D0042C448 /* SVRadialGradientLayer.m */; };
+		3568D81E1D2CD5A30042C448 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568D81D1D2CD5A30042C448 /* UserAccount.swift */; };
 		356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F96CD1D263BD800AF8E1D /* MainTabbar.swift */; };
 		356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */; };
 		356F96D21D26661E00AF8E1D /* VistorLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356F96D11D26661E00AF8E1D /* VistorLoginView.xib */; };
@@ -76,6 +84,20 @@
 		353D6F271D2519D200F9CBA2 /* swift-weiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-weiboUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353D6F2B1D2519D200F9CBA2 /* swift_weiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_weiboUITests.swift; sourceTree = "<group>"; };
 		353D6F2D1D2519D200F9CBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3568D8081D2C997F0042C448 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
+		3568D80A1D2C999C0042C448 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		3568D80C1D2CAB7F0042C448 /* VVeibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VVeibo-Bridge.h"; sourceTree = "<group>"; };
+		3568D80E1D2CAB9D0042C448 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		3568D80F1D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		3568D8101D2CAB9D0042C448 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		3568D8111D2CAB9D0042C448 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		3568D8121D2CAB9D0042C448 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		3568D8131D2CAB9D0042C448 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		3568D8141D2CAB9D0042C448 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		3568D8151D2CAB9D0042C448 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		3568D8161D2CAB9D0042C448 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		3568D8171D2CAB9D0042C448 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		3568D81D1D2CD5A30042C448 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAccount.swift; path = "swift-weibo/UserAccount.swift"; sourceTree = SOURCE_ROOT; };
 		356F96CD1D263BD800AF8E1D /* MainTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		356F96CF1D26632700AF8E1D /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		356F96D11D26661E00AF8E1D /* VistorLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VistorLoginView.xib; sourceTree = "<group>"; };
@@ -168,6 +190,7 @@
 				353D6F0B1D2519D200F9CBA2 /* AppDelegate.swift */,
 				353D6F121D2519D200F9CBA2 /* Assets.xcassets */,
 				353D6F171D2519D200F9CBA2 /* Info.plist */,
+				3568D80C1D2CAB7F0042C448 /* VVeibo-Bridge.h */,
 			);
 			path = "swift-weibo";
 			sourceTree = "<group>";
@@ -190,6 +213,32 @@
 			path = "swift-weiboUITests";
 			sourceTree = "<group>";
 		};
+		3568D8071D2C99700042C448 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				3568D8081D2C997F0042C448 /* OAuth.storyboard */,
+				3568D80A1D2C999C0042C448 /* OAuthViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		3568D80D1D2CAB9D0042C448 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3568D80E1D2CAB9D0042C448 /* SVIndefiniteAnimatedView.h */,
+				3568D80F1D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m */,
+				3568D8101D2CAB9D0042C448 /* SVProgressAnimatedView.h */,
+				3568D8111D2CAB9D0042C448 /* SVProgressAnimatedView.m */,
+				3568D8121D2CAB9D0042C448 /* SVProgressHUD-Prefix.pch */,
+				3568D8131D2CAB9D0042C448 /* SVProgressHUD.bundle */,
+				3568D8141D2CAB9D0042C448 /* SVProgressHUD.h */,
+				3568D8151D2CAB9D0042C448 /* SVProgressHUD.m */,
+				3568D8161D2CAB9D0042C448 /* SVRadialGradientLayer.h */,
+				3568D8171D2CAB9D0042C448 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		357C4A281D252057008D2B11 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +253,7 @@
 		357C4A291D252057008D2B11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3568D81D1D2CD5A30042C448 /* UserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +261,7 @@
 		357C4A2A1D252057008D2B11 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				3568D8071D2C99700042C448 /* OAuth */,
 				357C4A311D252277008D2B11 /* Main */,
 				357C4A2D1D252057008D2B11 /* Home */,
 				357C4A2E1D252057008D2B11 /* Message */,
@@ -289,6 +340,7 @@
 		358305F21D2B89F10074D497 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3568D80D1D2CAB9D0042C448 /* SVProgressHUD */,
 				358305F31D2B8A170074D497 /* Alamofire */,
 			);
 			path = Lib;
@@ -442,6 +494,8 @@
 				357C4A3F1D252611008D2B11 /* Compose.storyboard in Resources */,
 				357C4A3D1D2525F8008D2B11 /* Message.storyboard in Resources */,
 				357C4A351D252332008D2B11 /* Main.storyboard in Resources */,
+				3568D8091D2C997F0042C448 /* OAuth.storyboard in Resources */,
+				3568D81A1D2CAB9D0042C448 /* SVProgressHUD.bundle in Resources */,
 				357C4A491D252689008D2B11 /* Profile.storyboard in Resources */,
 				357C4A471D25267E008D2B11 /* Discover.storyboard in Resources */,
 				3583060D1D2B8A1D0074D497 /* Info.plist in Resources */,
@@ -470,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3568D80B1D2C999C0042C448 /* OAuthViewController.swift in Sources */,
 				358306121D2B8A1D0074D497 /* ParameterEncoding.swift in Sources */,
 				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
@@ -480,22 +535,27 @@
 				3583061A1D2B8A1D0074D497 /* Upload.swift in Sources */,
 				3583060B1D2B8A1D0074D497 /* Error.swift in Sources */,
 				353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */,
+				3568D8191D2CAB9D0042C448 /* SVProgressAnimatedView.m in Sources */,
 				358306191D2B8A1D0074D497 /* Timeline.swift in Sources */,
+				3568D8181D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m in Sources */,
 				357C4A331D252308008D2B11 /* MainViewController.swift in Sources */,
 				35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */,
 				358306161D2B8A1D0074D497 /* Result.swift in Sources */,
 				356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */,
 				358306171D2B8A1D0074D497 /* ServerTrustPolicy.swift in Sources */,
+				3568D81C1D2CAB9D0042C448 /* SVRadialGradientLayer.m in Sources */,
 				357C4A451D252675008D2B11 /* DiscoverViewController.swift in Sources */,
 				3583060F1D2B8A1D0074D497 /* MultipartFormData.swift in Sources */,
 				358306131D2B8A1D0074D497 /* Request.swift in Sources */,
 				358306091D2B8A1D0074D497 /* Alamofire.swift in Sources */,
 				3583060A1D2B8A1D0074D497 /* Download.swift in Sources */,
 				358306111D2B8A1D0074D497 /* Notifications.swift in Sources */,
+				3568D81E1D2CD5A30042C448 /* UserAccount.swift in Sources */,
 				358306181D2B8A1D0074D497 /* Stream.swift in Sources */,
 				3583060E1D2B8A1D0074D497 /* Manager.swift in Sources */,
 				357C4A3B1D2525EF008D2B11 /* MessageViewController.swift in Sources */,
 				358306151D2B8A1D0074D497 /* ResponseSerialization.swift in Sources */,
+				3568D81B1D2CAB9D0042C448 /* SVProgressHUD.m in Sources */,
 				357C4A391D2524F3008D2B11 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift-weibo/VVeibo-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -658,6 +719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift-weibo/VVeibo-Bridge.h";
 			};
 			name = Release;
 		};
