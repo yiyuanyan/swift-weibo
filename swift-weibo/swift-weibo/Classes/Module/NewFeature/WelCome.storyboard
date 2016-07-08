@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wIN-Zw-uzH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Wel Come View Controller-->
+        <scene sceneID="38w-eG-hiH">
+            <objects>
+                <viewController id="wIN-Zw-uzH" customClass="WelComeViewController" customModule="swift_weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KZq-yK-dCA"/>
+                        <viewControllerLayoutGuide type="bottom" id="lgf-ia-bsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24r-lf-ylQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="9Uc-Bi-yEW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="AtV-vn-6IQ">
+                                <rect key="frame" x="255" y="360" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="KYH-pV-VBe"/>
+                                    <constraint firstAttribute="width" constant="90" id="P0Q-iJ-F4h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agg-3Y-Z4e">
+                                <rect key="frame" x="258" y="465" width="84" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Uc-Bi-yEW" firstAttribute="leading" secondItem="24r-lf-ylQ" secondAttribute="leading" id="9sz-EW-s37"/>
+                            <constraint firstItem="lgf-ia-bsM" firstAttribute="top" secondItem="AtV-vn-6IQ" secondAttribute="bottom" constant="150" id="FPc-hM-rnZ"/>
+                            <constraint firstItem="agg-3Y-Z4e" firstAttribute="top" secondItem="AtV-vn-6IQ" secondAttribute="bottom" constant="15" id="FTN-OZ-tTv"/>
+                            <constraint firstItem="9Uc-Bi-yEW" firstAttribute="top" secondItem="24r-lf-ylQ" secondAttribute="top" id="HlU-f6-A0E"/>
+                            <constraint firstItem="AtV-vn-6IQ" firstAttribute="centerX" secondItem="9Uc-Bi-yEW" secondAttribute="centerX" id="IG3-lK-pJr"/>
+                            <constraint firstItem="agg-3Y-Z4e" firstAttribute="centerX" secondItem="AtV-vn-6IQ" secondAttribute="centerX" id="gOp-II-Wtc"/>
+                            <constraint firstAttribute="trailing" secondItem="9Uc-Bi-yEW" secondAttribute="trailing" id="uXd-ai-eJH"/>
+                            <constraint firstItem="lgf-ia-bsM" firstAttribute="top" secondItem="9Uc-Bi-yEW" secondAttribute="bottom" id="v1o-Rs-qWX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="FPc-hM-rnZ" id="0LQ-SJ-bwm"/>
+                        <outlet property="iconView" destination="AtV-vn-6IQ" id="sP8-UA-4DJ"/>
+                        <outlet property="welcomeLabel" destination="agg-3Y-Z4e" id="Ld0-dZ-WCU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQu-kW-IwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="279"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
+</document>

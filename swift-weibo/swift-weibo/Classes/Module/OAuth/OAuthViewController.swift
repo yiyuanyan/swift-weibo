@@ -82,6 +82,10 @@ class OAuthViewController: UIViewController, UIWebViewDelegate {
                 sharedUserAccount = userAccount
                 SVProgressHUD.showSuccessWithStatus("登录成功");
                 self.close();
+//                let sb = UIStoryboard(name: "WelCome", bundle: nil);
+//                let VC = sb.instantiateInitialViewController()! as UIViewController;
+//                UIApplication.sharedApplication().keyWindow?.rootViewController = VC;
+                NSNotificationCenter.defaultCenter().postNotificationName(WBSwitchRootVC, object: "WelCome");
             }else{
                 SVProgressHUD.showErrorWithStatus("未登录");
                 

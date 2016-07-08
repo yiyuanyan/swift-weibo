@@ -12,12 +12,16 @@ private let reuseIdentifier = "NewFeatureCell"
 
 class NewFeatureViewController: UICollectionViewController {
 
+    @IBOutlet weak var NewFeatureLayout: UICollectionViewFlowLayout!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
 
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(animated: Bool) {
+        NewFeatureLayout.itemSize = self.view.frame.size;
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +53,8 @@ class NewFeatureViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! NewFeatureCell
+        cell.imageIndex = indexPath.item;
         // Configure the cell
     
         return cell
@@ -86,6 +90,14 @@ class NewFeatureViewController: UICollectionViewController {
     
     }
     */
+    override func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        let path = collectionView.indexPathsForVisibleItems().last! as NSIndexPath;
+        let lastCell = collectionView.cellForItemAtIndexPath(path) as! NewFeatureCell;
+        //如果是最后一个cell
+        if(path.item == imageCount-1){
+            lastCell.showStartBtnWithAnimation();
+        }
+    }
 
 }
 
@@ -99,9 +111,35 @@ class NewFeatureCell: UICollectionViewCell {
     var imageIndex = 0{
         didSet{
             iconView.image = UIImage(named: "new_feature_\(imageIndex + 1)");
+            if(imageIndex == 3){
+                
+                //showStartBtnWithAnimation();
+            }
         }
     }
     
+    func showStartBtnWithAnimation(){
+        startBtn.hidden = false;
+        //设置按钮的大小为0
+        startBtn.transform = CGAffineTransformMakeScale(0, 0);
+        /*
+         开启动画效果
+         参数：动画执行时间，‘’，弹簧系数，加速度，动画样式，动画执行时闭包方法，动画结束后闭包方法
+        */
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions.LayoutSubviews, animations: {
+            //讲按钮大小设置为初始状态
+            self.startBtn.transform = CGAffineTransformMakeScale(1, 1);
+            }) { (_) in
+                print("OK");
+        }
+    }
+    
+    @IBAction func startBtnDidClick(sender: AnyObject) {
+//        let sb = UIStoryboard(name: "Main", bundle: nil);
+//        let VC = sb.instantiateInitialViewController()! as UIViewController;
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = VC;
+        NSNotificationCenter.defaultCenter().postNotificationName(WBSwitchRootVC, object: "Main");
+    }
     
     
 }

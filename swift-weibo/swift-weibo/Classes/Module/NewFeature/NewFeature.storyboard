@@ -10,10 +10,10 @@
         <scene sceneID="WVb-LD-J7J">
             <objects>
                 <collectionViewController id="SLs-l5-5w5" customClass="NewFeatureViewController" customModule="swift_weibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zhv-kC-toT">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="zhv-kC-toT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="k6J-12-5yw">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="k6J-12-5yw">
                             <size key="itemSize" width="300" height="600"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -30,11 +30,14 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_feature_1" translatesAutoresizingMaskIntoConstraints="NO" id="x83-J2-H1j">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJX-Wy-WnM">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJX-Wy-WnM">
                                             <rect key="frame" x="98" y="472" width="105" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="开始体验" backgroundImage="new_feature_finish_button"/>
                                             <state key="highlighted" backgroundImage="new_feature_finish_button_highlighted"/>
+                                            <connections>
+                                                <action selector="startBtnDidClick:" destination="vU8-WD-IC0" eventType="touchUpInside" id="nXW-hg-8WV"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -58,6 +61,9 @@
                             <outlet property="delegate" destination="SLs-l5-5w5" id="e9c-bW-Sn5"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="NewFeatureLayout" destination="k6J-12-5yw" id="iFT-uf-5KA"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgq-Th-cyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

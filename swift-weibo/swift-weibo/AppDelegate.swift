@@ -8,6 +8,10 @@
 
 import UIKit
 var sharedUserAccount = UserAccount.loadUserAccount();
+//切换根视图控制器的通知
+let WBSwitchRootVC = "WBSwitchRootVC";
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,25 +19,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //手动初始化WINDOW
+        window = UIWindow(frame: UIScreen.mainScreen().bounds);
+        window?.makeKeyAndVisible();
         window?.backgroundColor = UIColor.whiteColor();
-        // Override point for customization after application launch.
-//        //手动实例化window
-//        window = UIWindow.init(frame: UIScreen.mainScreen().bounds);
-//
-//        window?.makeKeyAndVisible();
         
         //设置全局导航栏按钮颜色
         setThemeColor();
-//        //用户信息
-//        //设置window的根视图控制器
-//        let sb = UIStoryboard(name: "Main",bundle: nil);
-//        let tabVC = sb.instantiateInitialViewController() as! UITabBarController;
-//        window?.rootViewController = tabVC;
+        //定义一个通知   自身   通知响应的方法  定义的常量
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.switchRootViewController), name: WBSwitchRootVC, object: nil);
+
+        showMainInterface();
+
         return true
+    }
+    //通知响应的类。
+    func switchRootViewController(notification:NSNotification){
+        print(notification.object);
+//        let sb = UIStoryboard(name: "WelCome", bundle: nil);
+//        let VC = sb.instantiateInitialViewController()! as UIViewController;
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = VC;
+        let sbName = notification.object as! String;
+        showStoryBoard(sbName);
+        
     }
     private func setThemeColor(){
         UINavigationBar.appearance().tintColor = UIColor.orangeColor();
         UITabBar.appearance().tintColor = UIColor.orangeColor();
+    }
+    
+    private func isNeedUpdate() -> Bool{
+        //获取当前版本
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String;
+        //将字符串转换为double数字
+        let versionNum = NSNumberFormatter().numberFromString(currentVersion)!.doubleValue;
+        //获取沙盒中的版本
+        let sandBoxKey = "update";
+        let defaults = NSUserDefaults.standardUserDefaults();
+        let sandBoxVersion = defaults.doubleForKey(sandBoxKey);
+        //立即存储版本号
+        defaults.setDouble(versionNum, forKey: sandBoxKey);
+        defaults.synchronize();
+        return (versionNum > sandBoxVersion);
+    }
+    private func showMainInterface(){
+        var sbName = "Main";
+        
+        if sharedUserAccount != nil {
+            //用户已经登录
+            if(isNeedUpdate()){
+                sbName = "NewFeature";
+            }else{
+                sbName = "WelCome";
+            }
+        }
+        showStoryBoard(sbName);
+        
+    }
+    private func showStoryBoard(sbName:String){
+        let sb = UIStoryboard(name: sbName, bundle: nil);
+        let VC = sb.instantiateInitialViewController()! as UIViewController;
+        window?.rootViewController = VC;
     }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

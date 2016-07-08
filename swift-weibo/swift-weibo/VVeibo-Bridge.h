@@ -9,5 +9,5 @@
 #ifndef VVeibo_Bridge_h
 #define VVeibo_Bridge_h
 #import "SVProgressHUD.h"
-
+#import "UIImageView+WebCache.h"
 #endif /* VVeibo_Bridge_h */
