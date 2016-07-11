@@ -55,6 +55,8 @@
 		358306191D2B8A1D0074D497 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306061D2B8A1D0074D497 /* Timeline.swift */; };
 		3583061A1D2B8A1D0074D497 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306071D2B8A1D0074D497 /* Upload.swift */; };
 		3583061B1D2B8A1D0074D497 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306081D2B8A1D0074D497 /* Validation.swift */; };
+		35AC613D1D3375E900D5835F /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */; };
+		35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613E1D33782900D5835F /* PopOverViewController.swift */; };
 		35CE7CAE1D2F55ED000A2D5A /* WelCome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */; };
 		35CE7CB01D2F5609000A2D5A /* WelComeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CAF1D2F5609000A2D5A /* WelComeViewController.swift */; };
 		35CE7CD31D2F7562000A2D5A /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CB31D2F7562000A2D5A /* MKAnnotationView+WebCache.m */; };
@@ -73,6 +75,7 @@
 		35CE7CE01D2F7562000A2D5A /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CCE1D2F7562000A2D5A /* UIImageView+HighlightedWebCache.m */; };
 		35CE7CE11D2F7562000A2D5A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CD01D2F7562000A2D5A /* UIImageView+WebCache.m */; };
 		35CE7CE21D2F7562000A2D5A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CD21D2F7562000A2D5A /* UIView+WebCacheOperation.m */; };
+		35DC73991D33375C00057F46 /* HomtTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC73981D33375C00057F46 /* HomtTitleButton.swift */; };
 		35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +158,8 @@
 		358306061D2B8A1D0074D497 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		358306071D2B8A1D0074D497 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		358306081D2B8A1D0074D497 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		35AC613E1D33782900D5835F /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelCome.storyboard; sourceTree = "<group>"; };
 		35CE7CAF1D2F5609000A2D5A /* WelComeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelComeViewController.swift; sourceTree = "<group>"; };
 		35CE7CB21D2F7562000A2D5A /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -190,6 +195,7 @@
 		35CE7CD01D2F7562000A2D5A /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		35CE7CD11D2F7562000A2D5A /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		35CE7CD21D2F7562000A2D5A /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		35DC73981D33375C00057F46 /* HomtTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomtTitleButton.swift; sourceTree = "<group>"; };
 		35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorLoginView.swift; sourceTree = "<group>"; };
 		35F747FD1D2A61D700DF7E31 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -362,8 +368,10 @@
 		357C4A2D1D252057008D2B11 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				35AC613B1D33759B00D5835F /* Popover */,
 				357C4A361D2524BE008D2B11 /* Home.storyboard */,
 				357C4A381D2524F3008D2B11 /* HomeViewController.swift */,
+				35DC73981D33375C00057F46 /* HomtTitleButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -449,6 +457,15 @@
 				358306081D2B8A1D0074D497 /* Validation.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		35AC613B1D33759B00D5835F /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */,
+				35AC613E1D33782900D5835F /* PopOverViewController.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		35CE7CB11D2F7562000A2D5A /* SDWebImage */ = {
@@ -638,6 +655,7 @@
 			files = (
 				3568D80B1D2C999C0042C448 /* OAuthViewController.swift in Sources */,
 				358306121D2B8A1D0074D497 /* ParameterEncoding.swift in Sources */,
+				35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */,
 				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
 				35CE7CD61D2F7562000A2D5A /* SDWebImageCompat.m in Sources */,
@@ -662,6 +680,7 @@
 				35CE7CD31D2F7562000A2D5A /* MKAnnotationView+WebCache.m in Sources */,
 				35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */,
 				358306161D2B8A1D0074D497 /* Result.swift in Sources */,
+				35DC73991D33375C00057F46 /* HomtTitleButton.swift in Sources */,
 				35CE7CE01D2F7562000A2D5A /* UIImageView+HighlightedWebCache.m in Sources */,
 				356F96CE1D263BD800AF8E1D /* MainTabbar.swift in Sources */,
 				358306171D2B8A1D0074D497 /* ServerTrustPolicy.swift in Sources */,
@@ -684,6 +703,7 @@
 				35CE7CD41D2F7562000A2D5A /* NSData+ImageContentType.m in Sources */,
 				358306151D2B8A1D0074D497 /* ResponseSerialization.swift in Sources */,
 				35CE7CDB1D2F7562000A2D5A /* SDWebImagePrefetcher.m in Sources */,
+				35AC613D1D3375E900D5835F /* PopoverPresentationController.swift in Sources */,
 				35CE7CDE1D2F7562000A2D5A /* UIImage+MultiFormat.m in Sources */,
 				3568D81B1D2CAB9D0042C448 /* SVProgressHUD.m in Sources */,
 				357C4A391D2524F3008D2B11 /* HomeViewController.swift in Sources */,
