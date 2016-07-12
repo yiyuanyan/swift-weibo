@@ -55,6 +55,7 @@
 		358306191D2B8A1D0074D497 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306061D2B8A1D0074D497 /* Timeline.swift */; };
 		3583061A1D2B8A1D0074D497 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306071D2B8A1D0074D497 /* Upload.swift */; };
 		3583061B1D2B8A1D0074D497 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358306081D2B8A1D0074D497 /* Validation.swift */; };
+		3598F4731D34836B0077F520 /* PopOverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3598F4721D34836B0077F520 /* PopOverAnimatior.swift */; };
 		35AC613D1D3375E900D5835F /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */; };
 		35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613E1D33782900D5835F /* PopOverViewController.swift */; };
 		35CE7CAE1D2F55ED000A2D5A /* WelCome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */; };
@@ -158,6 +159,7 @@
 		358306061D2B8A1D0074D497 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		358306071D2B8A1D0074D497 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		358306081D2B8A1D0074D497 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		3598F4721D34836B0077F520 /* PopOverAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAnimatior.swift; sourceTree = "<group>"; };
 		35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		35AC613E1D33782900D5835F /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelCome.storyboard; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			children = (
 				35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */,
 				35AC613E1D33782900D5835F /* PopOverViewController.swift */,
+				3598F4721D34836B0077F520 /* PopOverAnimatior.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				358306101D2B8A1D0074D497 /* NetworkReachabilityManager.swift in Sources */,
 				35CE7CDC1D2F7562000A2D5A /* UIButton+WebCache.m in Sources */,
 				35CE7CB01D2F5609000A2D5A /* WelComeViewController.swift in Sources */,
+				3598F4731D34836B0077F520 /* PopOverAnimatior.swift in Sources */,
 				3583061B1D2B8A1D0074D497 /* Validation.swift in Sources */,
 				35CE7CDA1D2F7562000A2D5A /* SDWebImageManager.m in Sources */,
 				358306141D2B8A1D0074D497 /* Response.swift in Sources */,

@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NnU-Y7-lqV">
-                                <rect key="frame" x="20" y="20" width="560" height="566"/>
+                                <rect key="frame" x="20" y="40" width="560" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NnU-Y7-lqV" firstAttribute="top" secondItem="Y7O-ur-ngw" secondAttribute="bottom" id="B9a-bS-6YU"/>
+                            <constraint firstItem="NnU-Y7-lqV" firstAttribute="top" secondItem="Y7O-ur-ngw" secondAttribute="bottom" constant="20" id="B9a-bS-6YU"/>
                             <constraint firstItem="zKC-Pm-GSW" firstAttribute="top" secondItem="NnU-Y7-lqV" secondAttribute="bottom" constant="14" id="Hw1-tF-PS7"/>
                             <constraint firstItem="NnU-Y7-lqV" firstAttribute="trailing" secondItem="3cO-wR-PGe" secondAttribute="trailingMargin" id="KEV-R0-Krf"/>
                             <constraint firstItem="NnU-Y7-lqV" firstAttribute="leading" secondItem="3cO-wR-PGe" secondAttribute="leadingMargin" id="Ukj-8M-MFN"/>

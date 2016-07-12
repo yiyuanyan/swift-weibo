@@ -9,7 +9,7 @@
 import UIKit
 
 class PopoverPresentationController: UIPresentationController {
-    
+    var presentedViewFrame:CGRect = CGRectZero;
     lazy var dummyView: UIView = {
         let v = UIView();
         v.backgroundColor = UIColor(white: 0.0, alpha: 0.3);
@@ -24,8 +24,8 @@ class PopoverPresentationController: UIPresentationController {
         super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController);
     }
     override func containerViewDidLayoutSubviews() {
-        presentedView()?.frame = CGRectMake(80, 64, 200, 240);
+        presentedView()!.frame = presentedViewFrame;
         dummyView.frame = containerView!.bounds;
-        containerView?.insertSubview(dummyView, atIndex: 0);
+        containerView!.insertSubview(dummyView, atIndex: 0);
     }
 }
