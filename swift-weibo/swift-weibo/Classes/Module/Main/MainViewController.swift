@@ -35,12 +35,10 @@ class MainViewController: UITabBarController {
      函数重载，函数名一样，但参数不同
     */
     private func addChildViewController(sbName:String, title:String, imageName:String) {
-        //获取storyboard
-        let sb = UIStoryboard(name: sbName, bundle: nil);
-        //创建导航控制器
-        let nav = sb.instantiateInitialViewController() as! UINavigationController;
+
+        let nav = UIStoryboard.initalViewController(sbName) as! UINavigationController;
         //设置导航标题
-        nav.topViewController?.title = title;
+        nav.topViewController!.title = title;
         //设置tabBar按钮图片
         nav.tabBarItem.image = UIImage(named: imageName);
         //设置tabBar选中图片

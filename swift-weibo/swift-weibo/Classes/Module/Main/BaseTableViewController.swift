@@ -35,9 +35,9 @@ class BaseTableViewController: UITableViewController,VisVistorLoginViewDelegate 
     //实现协议方法
     func loginBtnDidClick() {
         print("登录");
-        let sb = UIStoryboard(name: "OAuth", bundle: nil);
-        let vc = sb.instantiateInitialViewController()! as UIViewController;
-        presentViewController(vc, animated: true, completion: nil);
+        let VC = UIStoryboard.initalViewController("OAuth");
+        
+        presentViewController(VC, animated: true, completion: nil);
     }
     func registerBtnDidClick() {
         print("注册");

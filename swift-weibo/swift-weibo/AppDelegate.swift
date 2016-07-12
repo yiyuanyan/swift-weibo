@@ -77,8 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     private func showStoryBoard(sbName:String){
-        let sb = UIStoryboard(name: sbName, bundle: nil);
-        let VC = sb.instantiateInitialViewController()! as UIViewController;
+        let VC = UIStoryboard.initalViewController(sbName);
+        
         window?.rootViewController = VC;
     }
     func applicationWillResignActive(application: UIApplication) {

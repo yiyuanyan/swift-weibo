@@ -15,6 +15,7 @@ class HomeViewController: BaseTableViewController {
         super.viewDidLoad()
         userLoginView?.setUpUIWithInfo("visitordiscover_feed_image_house", tipText: "关注一些人，回这里看看有什么惊喜", isHideSmallIcon: false);
         setTitleButton();
+        Status.loadStatus();
         
     }
     private func setTitleButton(){
