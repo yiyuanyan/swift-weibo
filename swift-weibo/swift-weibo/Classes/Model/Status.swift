@@ -13,27 +13,67 @@ class Status: NSObject {
     var created_at:String?;
     //微博ID
     var id:Int = 0;
+    
     //微博内容
     var text:String?;
     //微博来源
     var source:String?;
     //缩略图数组
-    var pic_urls:[[String:String]]?;
-    static var properties = ["created_at","id","text","source","pic_urls"];
-    class func loadStatus(){
-        let params = ["access_token":sharedUserAccount!.access_token! as String];
-        request(.GET, WB_STATUS, parameters: params).responseJSON { (JSON) in
-            if ((JSON.result.value) != nil){
-                //print(JSON.result.value);
-                let array = (JSON.result.value as! NSDictionary)["statuses"] as? [[String:AnyObject]];
-                if(array != nil){
-                    let statuses = Status.statuses(array!);
-                    for status in statuses!{
-                        print(status);
-                    }
+    var pic_urls:[[String:String]]?{
+        didSet{
+            imageURLs = [NSURL]();
+            for dict in pic_urls!{
+                let urlString = dict["thumbnail_pic"];
+                let url = NSURL(string: urlString!);
+                if(url != nil){
+                    imageURLs?.append(url!);
                 }
-            }else{
+            }
+        }
+    }
+    
+    
+    var imageURLs:[NSURL]?;
+    var user:User?
+    
+    private static var properties = ["created_at","id","text","source","pic_urls", "user"];
+    class func loadStatus(completion:(statuses:[Status]?) ->()){
+        let params = ["access_token":sharedUserAccount!.access_token! as String];
+        NetworkTools.requestJSON(.GET, URLString: WB_STATUS, parameters: params) { (JSON) in
+            if(JSON == nil){
+                print("请求失败");
+                completion(statuses: nil);
                 return;
+            }
+            //print(JSON.result.value);
+            let array = (JSON as! NSDictionary)["statuses"] as? [[String:AnyObject]];
+            if(array != nil){
+                let items = Status.statuses(array!);
+                Status.cacheStatusImage(items);
+                //completion(statuses:items);
+            }
+            
+        }
+        
+        
+        
+    }
+    //缓存图片
+    private class func cacheStatusImage(statuses:[Status]?){
+        if(statuses == nil){
+            return;
+        }
+        //便利数组
+        for s in statuses as [Status]!{
+            if(s.imageURLs == nil){
+                continue;
+            }else{
+                let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last! as String;
+                for url in s.imageURLs!{
+                    SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions.CacheMemoryOnly, progress: nil, completed: { (_, _, _, _, _) in
+                        
+                    })
+                }
             }
         }
     }
@@ -55,6 +95,10 @@ class Status: NSObject {
                 continue;
             }
             setValue(dict[key], forKeyPath: key);
+        }
+        let userDict = dict["user"] as? [String:AnyObject];
+        if(userDict != nil){
+            user = User(dict: userDict!);
         }
     }
 }

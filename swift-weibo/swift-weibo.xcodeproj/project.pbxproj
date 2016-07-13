@@ -36,6 +36,9 @@
 		357C4A471D25267E008D2B11 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A461D25267E008D2B11 /* Discover.storyboard */; };
 		357C4A491D252689008D2B11 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357C4A481D252689008D2B11 /* Profile.storyboard */; };
 		357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357C4A4A1D2526A2008D2B11 /* ProfileTableViewController.swift */; };
+		357E067E1D35E25700B2938A /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E067D1D35E25700B2938A /* NetworkTools.swift */; };
+		357E06801D36125400B2938A /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E067F1D36125400B2938A /* StatusCell.swift */; };
+		357E06821D36144400B2938A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E06811D36144400B2938A /* User.swift */; };
 		358306091D2B8A1D0074D497 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358305F61D2B8A1D0074D497 /* Alamofire.swift */; };
 		3583060A1D2B8A1D0074D497 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358305F71D2B8A1D0074D497 /* Download.swift */; };
 		3583060B1D2B8A1D0074D497 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358305F81D2B8A1D0074D497 /* Error.swift */; };
@@ -141,6 +144,9 @@
 		357C4A461D25267E008D2B11 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		357C4A481D252689008D2B11 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		357C4A4A1D2526A2008D2B11 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		357E067D1D35E25700B2938A /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		357E067F1D36125400B2938A /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		357E06811D36144400B2938A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		358305F51D2B8A1D0074D497 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		358305F61D2B8A1D0074D497 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		358305F71D2B8A1D0074D497 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 			children = (
 				3568D81D1D2CD5A30042C448 /* UserAccount.swift */,
 				3598A4A31D34C61D0075B2D1 /* Status.swift */,
+				357E06811D36144400B2938A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 			children = (
 				35AC613B1D33759B00D5835F /* Popover */,
 				357C4A361D2524BE008D2B11 /* Home.storyboard */,
+				357E067F1D36125400B2938A /* StatusCell.swift */,
 				357C4A381D2524F3008D2B11 /* HomeViewController.swift */,
 				35DC73981D33375C00057F46 /* HomtTitleButton.swift */,
 			);
@@ -405,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				3598A49A1D348B620075B2D1 /* UIStoryboard+extension.swift */,
+				357E067D1D35E25700B2938A /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -663,12 +672,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3568D80B1D2C999C0042C448 /* OAuthViewController.swift in Sources */,
+				357E06801D36125400B2938A /* StatusCell.swift in Sources */,
 				358306121D2B8A1D0074D497 /* ParameterEncoding.swift in Sources */,
 				35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */,
 				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
 				35CE7CD61D2F7562000A2D5A /* SDWebImageCompat.m in Sources */,
 				352743F31D2E1D86007F0BB8 /* NewFeatureViewController.swift in Sources */,
+				357E06821D36144400B2938A /* User.swift in Sources */,
 				358306101D2B8A1D0074D497 /* NetworkReachabilityManager.swift in Sources */,
 				35CE7CDC1D2F7562000A2D5A /* UIButton+WebCache.m in Sources */,
 				35CE7CB01D2F5609000A2D5A /* WelComeViewController.swift in Sources */,
@@ -680,6 +691,7 @@
 				3583061A1D2B8A1D0074D497 /* Upload.swift in Sources */,
 				35CE7CD71D2F7562000A2D5A /* SDWebImageDecoder.m in Sources */,
 				3598A4A41D34C61D0075B2D1 /* Status.swift in Sources */,
+				357E067E1D35E25700B2938A /* NetworkTools.swift in Sources */,
 				3583060B1D2B8A1D0074D497 /* Error.swift in Sources */,
 				353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */,
 				3568D8191D2CAB9D0042C448 /* SVProgressAnimatedView.m in Sources */,

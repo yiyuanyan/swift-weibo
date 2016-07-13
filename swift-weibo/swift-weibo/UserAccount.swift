@@ -7,7 +7,7 @@
 //  网络请求回来的用户数据保存在这个模型中
 
 import UIKit
-
+private let WB_OAUTH = "https://api.weibo.com/oauth2/access_token";
 class UserAccount: NSObject, NSCoding {
     var access_token: String?
     var expires_in: NSTimeInterval = 0;
@@ -29,21 +29,16 @@ class UserAccount: NSObject, NSCoding {
     //类方法。其他类中和直接类名.方法名调用
     class func loadAccessToken(parmas:[String:AnyObject],completion:(userAccount: UserAccount?) -> ()){
         //使用Alamofire框架发送网络请求
-        request(.POST, "https://api.weibo.com/oauth2/access_token", parameters: parmas).responseJSON { JSON in
-            //返回失败
-            if(JSON.result.isFailure){
-                //打印错误信息
-                print(JSON.result.error);
+        NetworkTools.requestJSON(.POST, URLString: WB_OAUTH, parameters: parmas) { (JSON) in
+            if(JSON == nil){
+                print("请求失败");
                 completion(userAccount: nil);
-                return;
             }
-            //返回成功
-            if(JSON.result.isSuccess){
-                //保存数据
-                let userAccount = UserAccount(dict: JSON.result.value as! [String : AnyObject]);
-                userAccount.loadUserInfo(completion);
-            }
-        };
+            print(JSON);
+            let userAccount = UserAccount(dict: JSON as! [String: AnyObject]);
+            userAccount.loadUserInfo(completion);
+        }
+        
     }
     override var description:String{
         let properties = ["access_token","expires_date","uid","name","avatar_large"];
@@ -71,28 +66,26 @@ class UserAccount: NSObject, NSCoding {
     func loadUserInfo(completion:(userAccount: UserAccount?) -> ()){
         let urlString = "https://api.weibo.com/2/users/show.json";
         let parmas = ["uid":uid! as String,"access_token":access_token! as String];
-        request(.GET, urlString, parameters: parmas, encoding: ParameterEncoding.URL, headers: nil).responseJSON { (JSON) in
-            //print(JSON);
-            //失败
-            if(JSON.result.isFailure){
+        NetworkTools.requestJSON(.GET, URLString: urlString, parameters: parmas) { (JSON) in
+            if(JSON == nil){
                 completion(userAccount: nil);
-                print("登录失败");
+                print("请求失败");
                 return;
             }
-            //成功
-            if(JSON.result.isSuccess){
-                print(JSON.result.value);
-                //获取用户名和头像
-                if let userInfo = JSON.result.value as? [String:AnyObject]{
-                    self.name = userInfo["name"] as? String;
-                    self.avatar_large = userInfo["avatar_large"] as? String;
-                    NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPaht);
-                    //授权成功 + 获取个人信息后的回调
-                    completion(userAccount: self);
-                    
-                }
+            //获取用户名和头像
+            if let userInfo = JSON as? [String:AnyObject]{
+                self.name = userInfo["name"] as? String;
+                self.avatar_large = userInfo["avatar_large"] as? String;
+                NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPaht);
+                //授权成功 + 获取个人信息后的回调
+                completion(userAccount: self);
+                
             }
-        };
+            
+        }
+        
+        
+        
     }
     //对外调用信息接口
     class func loadUserAccount() -> UserAccount?{
