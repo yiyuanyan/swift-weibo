@@ -49,7 +49,7 @@ class Status: NSObject {
             let array = (JSON as! NSDictionary)["statuses"] as? [[String:AnyObject]];
             if(array != nil){
                 let items = Status.statuses(array!);
-                Status.cacheStatusImage(items);
+                Status.cacheStatusImage(items, completion: completion);
                 //completion(statuses:items);
             }
             
@@ -59,10 +59,12 @@ class Status: NSObject {
         
     }
     //缓存图片
-    private class func cacheStatusImage(statuses:[Status]?){
+    private class func cacheStatusImage(statuses:[Status]?, completion:(statuses:[Status]?) ->()){
         if(statuses == nil){
             return;
         }
+        //建立一个dispatch_group 可以监听一组异步完成后 得到统一的通知
+        let group  = dispatch_group_create();
         //便利数组
         for s in statuses as [Status]!{
             if(s.imageURLs == nil){
@@ -70,12 +72,22 @@ class Status: NSObject {
             }else{
                 let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last! as String;
                 for url in s.imageURLs!{
+                    //建立群组
+                    dispatch_group_enter(group);
                     SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions.CacheMemoryOnly, progress: nil, completed: { (_, _, _, _, _) in
+                        //离开群组 一定要放在block的最后一句，表示异步任务全部完成
+                        dispatch_group_leave(group);
                         
                     })
                 }
             }
         }
+        //监听群组的调度结果
+        dispatch_group_notify(group, dispatch_get_main_queue()) { 
+            print("所有图片下载完成");
+            completion(statuses: statuses);
+        }
+        
     }
     private class func statuses(array:[[String:AnyObject]]) -> [Status]?{
         //便利数据

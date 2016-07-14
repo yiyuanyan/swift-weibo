@@ -30,7 +30,7 @@ class HomeViewController: BaseTableViewController {
     private func loadData(){
         Status.loadStatus { (statuses) in
             self.statuses = statuses;
-        };
+        }
     }
     private func setTitleButton(){
         if(sharedUserAccount != nil){
