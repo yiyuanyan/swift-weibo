@@ -56,7 +56,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="318"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIP-vD-Rza" id="g1k-eG-6Rv">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="317.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="318"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-pO-X9e" userLabel="用户头像">
@@ -96,10 +96,53 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yYO-pR-AwA" userLabel="配图视图">
+                                            <rect key="frame" x="8" y="80" width="290" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="Z7c-8t-DDm"/>
+                                                <constraint firstAttribute="width" constant="290" id="lht-vN-xOg"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XRf-g0-8DK">
+                                                <size key="itemSize" width="90" height="90"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureCell" id="6Gd-8n-jQU" customClass="PictureCell" customModule="swift_weibo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ys-qK-61K">
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="2ys-qK-61K" firstAttribute="top" secondItem="6Gd-8n-jQU" secondAttribute="top" id="3z0-aH-hzW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2ys-qK-61K" secondAttribute="trailing" id="5it-7R-ZE5"/>
+                                                        <constraint firstItem="2ys-qK-61K" firstAttribute="leading" secondItem="6Gd-8n-jQU" secondAttribute="leading" id="PDR-r6-AYe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2ys-qK-61K" secondAttribute="bottom" id="vuu-gH-c4z"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="2ys-qK-61K" id="iRG-EZ-bh1"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="HIP-vD-Rza" id="ElG-Ke-1ZG"/>
+                                            </connections>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="b3L-Hw-gqS" firstAttribute="top" secondItem="9mb-pO-X9e" secondAttribute="top" id="GJd-11-aQK"/>
                                         <constraint firstItem="pd3-5B-8pO" firstAttribute="leading" secondItem="b0V-aH-E0J" secondAttribute="trailing" constant="8" id="Gl5-Xc-32p"/>
+                                        <constraint firstItem="yYO-pR-AwA" firstAttribute="top" secondItem="D8D-xj-pKz" secondAttribute="bottom" constant="8" id="Jcr-5t-UBt"/>
+                                        <constraint firstItem="yYO-pR-AwA" firstAttribute="leading" secondItem="D8D-xj-pKz" secondAttribute="leading" id="Qeo-WX-hLV"/>
                                         <constraint firstAttribute="topMargin" secondItem="9mb-pO-X9e" secondAttribute="top" id="T0b-7F-rPY"/>
                                         <constraint firstItem="D8D-xj-pKz" firstAttribute="top" secondItem="9mb-pO-X9e" secondAttribute="bottom" constant="8" id="aVc-u3-D1M"/>
                                         <constraint firstItem="b0V-aH-E0J" firstAttribute="leading" secondItem="azM-8i-rVI" secondAttribute="trailing" constant="15" id="cxD-Vb-qjq"/>
@@ -116,6 +159,10 @@
                                     <outlet property="contentLabel" destination="D8D-xj-pKz" id="FJM-4H-Jop"/>
                                     <outlet property="iconImage" destination="9mb-pO-X9e" id="eTy-mA-thV"/>
                                     <outlet property="nameLabel" destination="b3L-Hw-gqS" id="ZpP-XI-dum"/>
+                                    <outlet property="pictureView" destination="yYO-pR-AwA" id="krs-93-8pc"/>
+                                    <outlet property="pictureViewHeight" destination="Z7c-8t-DDm" id="aJM-z7-I7m"/>
+                                    <outlet property="pictureViewLayout" destination="XRf-g0-8DK" id="Lwn-s4-Med"/>
+                                    <outlet property="pictureViewWidth" destination="lht-vN-xOg" id="yHP-Yg-YA0"/>
                                     <outlet property="sourceLabel" destination="pd3-5B-8pO" id="RO3-0D-vPc"/>
                                     <outlet property="timeLabel" destination="azM-8i-rVI" id="88q-NW-xMW"/>
                                 </connections>

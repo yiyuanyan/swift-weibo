@@ -34,9 +34,22 @@ class Status: NSObject {
     
     
     var imageURLs:[NSURL]?;
-    var user:User?
+    //如果转发，原创就不允许有配图 被转发的菜允许有图片
+    var pictureURLs:[NSURL]?{
+        if(retweeted_status == nil){
+            return imageURLs;
+        }else{
+            return retweeted_status?.imageURLs;
+        }
+    }
     
-    private static var properties = ["created_at","id","text","source","pic_urls", "user"];
+    var user:User?
+    //转发微博字段
+    var retweeted_status: Status?
+    
+    
+    
+    private static var properties = ["created_at","id","text","source","pic_urls", "user","retweeted_status"];
     class func loadStatus(completion:(statuses:[Status]?) ->()){
         let params = ["access_token":sharedUserAccount!.access_token! as String];
         NetworkTools.requestJSON(.GET, URLString: WB_STATUS, parameters: params) { (JSON) in
@@ -67,11 +80,11 @@ class Status: NSObject {
         let group  = dispatch_group_create();
         //便利数组
         for s in statuses as [Status]!{
-            if(s.imageURLs == nil){
+            if(s.pictureURLs == nil){
                 continue;
             }else{
                 let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last! as String;
-                for url in s.imageURLs!{
+                for url in s.pictureURLs!{
                     //建立群组
                     dispatch_group_enter(group);
                     SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions.CacheMemoryOnly, progress: nil, completed: { (_, _, _, _, _) in
@@ -111,6 +124,10 @@ class Status: NSObject {
         let userDict = dict["user"] as? [String:AnyObject];
         if(userDict != nil){
             user = User(dict: userDict!);
+        }
+        //实例化转发微博
+        if let retweetedDict = dict["retweeted_status"] as? [String:AnyObject]{
+            retweeted_status = Status(dict:retweetedDict);
         }
     }
 }

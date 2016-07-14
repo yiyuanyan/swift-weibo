@@ -10,6 +10,13 @@ import UIKit
 
 class StatusCell: UITableViewCell {
 
+    @IBOutlet weak var pictureViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var pictureViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var pictureView: UICollectionView!
+    
+    @IBOutlet weak var pictureViewLayout: UICollectionViewFlowLayout!
+    
     @IBOutlet weak var iconImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,32 +34,37 @@ class StatusCell: UITableViewCell {
             timeLabel.text = status?.created_at;
             sourceLabel.text = status?.source;
             contentLabel.text = status?.text;
+            let p = calcPictureViewSize(status!);
+            pictureViewHeight.constant = p.viewSize.height;
+            pictureViewWidth.constant = p.viewSize.width;
+            pictureViewLayout.itemSize = p.itemSize;
+            pictureView.reloadData();
         }
     }
-    private func calcPictureViewSize() -> CGSize{
+    private func calcPictureViewSize(status: Status) -> (viewSize:CGSize, itemSize:CGSize){
         //单张图片默认大小
         let s: CGFloat = 90;
         let itemSize = CGSizeMake(s, s);
         let m:CGFloat = 10;
-        let imageCount = status?.imageURLs?.count ?? 0;
+        let imageCount = status.pictureURLs?.count ?? 0;
         if imageCount == 0 {
-            return CGSizeZero;
+            return (CGSizeZero,CGSizeZero);
         }
         if imageCount == 1{
             //从缓存中获取图片
-            let key = status?.imageURLs![0].absoluteString;
+            let key = status.pictureURLs![0].absoluteString;
             
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key);
-            return image.size;
+            return (image.size,image.size);
             
         }
         if imageCount == 4{
             print("四张图片");
             
-            return CGSizeMake(s * 2 + m, s * 2 + m);
+            return (CGSizeMake(s * 2 + m, s * 2 + m), itemSize);
         }
         let row = CGFloat((imageCount - 1)/3 + 1);
-        return CGSizeMake(s * 3 + m * 2, s * row + (row - 1) * m);
+        return (CGSizeMake(s * 3 + m * 2, s * row + (row - 1) * m), itemSize);
     }
     
     override func awakeFromNib() {
@@ -69,4 +81,26 @@ class StatusCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension StatusCell:UICollectionViewDataSource{
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return status?.pictureURLs?.count ?? 0;
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PictureCell", forIndexPath: indexPath) as! PictureCell;
+        cell.url = status!.pictureURLs![indexPath.item];
+        
+        return cell;
+        
+    }
+}
+
+class PictureCell:UICollectionViewCell{
+    @IBOutlet weak var iconView: UIImageView!
+    var url: NSURL?{
+        didSet{
+            iconView.sd_setImageWithURL(url);
+        }
+    }
 }
