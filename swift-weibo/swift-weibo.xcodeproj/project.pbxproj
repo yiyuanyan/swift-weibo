@@ -63,6 +63,8 @@
 		3598F4731D34836B0077F520 /* PopOverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3598F4721D34836B0077F520 /* PopOverAnimatior.swift */; };
 		35AC613D1D3375E900D5835F /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */; };
 		35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613E1D33782900D5835F /* PopOverViewController.swift */; };
+		35BE93611D407AF3001C6BB1 /* WBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE93601D407AF3001C6BB1 /* WBRefreshControl.swift */; };
+		35BE93631D4095E3001C6BB1 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35BE93621D4095E3001C6BB1 /* RefreshView.xib */; };
 		35CE7CAE1D2F55ED000A2D5A /* WelCome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */; };
 		35CE7CB01D2F5609000A2D5A /* WelComeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CAF1D2F5609000A2D5A /* WelComeViewController.swift */; };
 		35CE7CD31D2F7562000A2D5A /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CB31D2F7562000A2D5A /* MKAnnotationView+WebCache.m */; };
@@ -172,6 +174,8 @@
 		3598F4721D34836B0077F520 /* PopOverAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAnimatior.swift; sourceTree = "<group>"; };
 		35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		35AC613E1D33782900D5835F /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		35BE93601D407AF3001C6BB1 /* WBRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRefreshControl.swift; sourceTree = "<group>"; };
+		35BE93621D4095E3001C6BB1 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		35CE7CAD1D2F55ED000A2D5A /* WelCome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelCome.storyboard; sourceTree = "<group>"; };
 		35CE7CAF1D2F5609000A2D5A /* WelComeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelComeViewController.swift; sourceTree = "<group>"; };
 		35CE7CB21D2F7562000A2D5A /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 		357C4A2D1D252057008D2B11 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				35BE935F1D407ACC001C6BB1 /* Refresh */,
 				35AC613B1D33759B00D5835F /* Popover */,
 				357C4A361D2524BE008D2B11 /* Home.storyboard */,
 				357E067F1D36125400B2938A /* StatusCell.swift */,
@@ -484,6 +489,15 @@
 				3598F4721D34836B0077F520 /* PopOverAnimatior.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		35BE935F1D407ACC001C6BB1 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				35BE93601D407AF3001C6BB1 /* WBRefreshControl.swift */,
+				35BE93621D4095E3001C6BB1 /* RefreshView.xib */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 		35CE7CB11D2F7562000A2D5A /* SDWebImage */ = {
@@ -642,6 +656,7 @@
 				357C4A351D252332008D2B11 /* Main.storyboard in Resources */,
 				35CE7CAE1D2F55ED000A2D5A /* WelCome.storyboard in Resources */,
 				3568D8091D2C997F0042C448 /* OAuth.storyboard in Resources */,
+				35BE93631D4095E3001C6BB1 /* RefreshView.xib in Resources */,
 				3568D81A1D2CAB9D0042C448 /* SVProgressHUD.bundle in Resources */,
 				357C4A491D252689008D2B11 /* Profile.storyboard in Resources */,
 				357C4A471D25267E008D2B11 /* Discover.storyboard in Resources */,
@@ -676,6 +691,7 @@
 				358306121D2B8A1D0074D497 /* ParameterEncoding.swift in Sources */,
 				35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */,
 				356F96D01D26632700AF8E1D /* BaseTableViewController.swift in Sources */,
+				35BE93611D407AF3001C6BB1 /* WBRefreshControl.swift in Sources */,
 				357C4A4B1D2526A2008D2B11 /* ProfileTableViewController.swift in Sources */,
 				35CE7CD61D2F7562000A2D5A /* SDWebImageCompat.m in Sources */,
 				352743F31D2E1D86007F0BB8 /* NewFeatureViewController.swift in Sources */,
@@ -855,6 +871,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -869,6 +886,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-weibo/VVeibo-Bridge.h";
 			};
 			name = Debug;
@@ -879,6 +897,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -893,6 +912,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hejianxin.swift-weibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-weibo/VVeibo-Bridge.h";
 			};
 			name = Release;

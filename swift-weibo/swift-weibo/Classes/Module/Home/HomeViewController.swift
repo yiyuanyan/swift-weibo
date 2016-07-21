@@ -22,15 +22,34 @@ class HomeViewController: BaseTableViewController {
         userLoginView?.setUpUIWithInfo("visitordiscover_feed_image_house", tipText: "关注一些人，回这里看看有什么惊喜", isHideSmallIcon: false);
         setTitleButton();
         if(userLogin){
+            setUpRefreshControl();
             loadData();
         }
         
     }
-    private func loadData(){
+    private func setUpRefreshControl(){
+        //tableView初始化下拉刷新,WBRefreshControl为自定义类，继承UIRefreshControl
+        refreshControl = WBRefreshControl();
+        //下拉刷新监听事件
+        refreshControl?.addTarget(self, action: #selector(HomeViewController.loadData), forControlEvents: UIControlEvents.ValueChanged);
+//        //自定义view
+//        let myView = UIView(frame: CGRectMake(0,0,320,44));
+//        
+//        myView.backgroundColor = UIColor.redColor();
+//        refreshControl?.addSubview(myView);
+        //添加到tableView中
+        tableView.addSubview(refreshControl!);
+    }
+    
+    @IBAction func loadData() {
+        
         Status.loadStatus { (statuses) in
             self.statuses = statuses;
         }
     }
+//    @IBAction func loadData(){
+//        
+//    }
     private func setTitleButton(){
         if(sharedUserAccount != nil){
             titleButton.setTitle(sharedUserAccount!.name! + " ", forState: UIControlState.Normal);
