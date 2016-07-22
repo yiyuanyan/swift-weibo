@@ -50,7 +50,13 @@ class WBRefreshControl: UIRefreshControl {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         print(frame);
         let offsetY = frame.origin.y;
-        
+        //判断是否正在刷新
+        if refreshing && !isLoading{
+            //正在刷新，播放刷新的动画
+            isLoading = true;
+            refreshView?.startLoading();
+            return;
+        }
         if offsetY < -65 && !showTipFlag{
             showTipFlag = true;
             //改变图片
@@ -62,6 +68,14 @@ class WBRefreshControl: UIRefreshControl {
             showTipFlag = false;
             refreshView?.rotatetipIcon(showTipFlag);
         }
+    }
+    override func endRefreshing() {
+        super.endRefreshing();
+        //停止动画
+        refreshView?.endLoading();
+        //重置标识符
+        //showTipFlag = false;
+        isLoading = false;
     }
 }
 class WBRefreshView:UIView{
@@ -79,6 +93,23 @@ class WBRefreshView:UIView{
         UIView.animateWithDuration(0.2) {
             self.tipIcon.transform = CGAffineTransformRotate(self.tipIcon.transform, angel);
         }
+    }
+    //正在刷新动画
+    private func startLoading(){
+        loadingView.hidden = false;
+        let animation = CABasicAnimation(keyPath: "transform.rotation");
+        animation.repeatCount = MAXFLOAT;
+        animation.toValue = 2*M_PI
+        animation.duration = 1;
+        
+        loadingIcon.layer.addAnimation(animation, forKey: nil);
+    }
+    
+    private func endLoading(){
+        //删除动画
+        loadingIcon.layer.removeAllAnimations();
+        //显示提示视图
+        loadingView.hidden = true;
     }
     
     

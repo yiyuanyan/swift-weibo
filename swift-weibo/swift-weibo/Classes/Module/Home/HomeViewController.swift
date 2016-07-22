@@ -23,7 +23,9 @@ class HomeViewController: BaseTableViewController {
         setTitleButton();
         if(userLogin){
             setUpRefreshControl();
+            
             loadData();
+            
         }
         
     }
@@ -40,16 +42,49 @@ class HomeViewController: BaseTableViewController {
         //添加到tableView中
         tableView.addSubview(refreshControl!);
     }
-    
+    var loadMoreFlag = false;
     @IBAction func loadData() {
+        refreshControl?.beginRefreshing();
         
-        Status.loadStatus { (statuses) in
-            self.statuses = statuses;
+        var since_id = statuses?.first?.id ?? 0;
+//        var max_id = statuses?.last!.id ?? 0;
+//        
+//        if max_id > 0{
+//            since_id = 0;
+//        }
+        var max_id = 0;
+        if loadMoreFlag{
+            since_id = 0;
+            max_id = statuses?.last?.id ?? 0;
+        }
+        Status.loadStatus(since_id,max_id: max_id) { (statuses) in
+            self.refreshControl?.endRefreshing();
+            if statuses == nil{
+                self.showTipTitle(0);
+                return;
+            }
+            if since_id > 0{
+                //下拉刷新
+                self.statuses! = statuses! + self.statuses!;
+                self.showTipTitle((self.statuses?.count)!);
+            }else if(max_id > 0){
+                self.statuses! += statuses!;
+                self.loadMoreFlag = false;
+            }else{
+                self.statuses = statuses;
+            }
+            
         }
     }
 //    @IBAction func loadData(){
 //        
 //    }
+    
+    private func showTipTitle(count:Int){
+        let title = count == 0 ? "没有更新数据" : "有\(count)条数据"
+        let navBar = self.navigationController?.navigationBar as! HomeNavigationBar;
+        navBar.showTipWithAnimation(title);
+    }
     private func setTitleButton(){
         if(sharedUserAccount != nil){
             titleButton.setTitle(sharedUserAccount!.name! + " ", forState: UIControlState.Normal);
@@ -110,7 +145,11 @@ class HomeViewController: BaseTableViewController {
         let status = statuses![indexPath.row];
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusCell.cellIdentifer(status))! as! StatusCell;
         cell.status = statuses![indexPath.row];
-        
+        //如果是最后面的cell出现 需要执行上啦加载更多
+        if indexPath.row == (self.statuses?.count)! - 2{
+            loadMoreFlag = true;
+            loadData();
+        }
         return cell;
     }
 

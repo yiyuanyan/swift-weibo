@@ -50,8 +50,15 @@ class Status: NSObject {
     
     
     private static var properties = ["created_at","id","text","source","pic_urls", "user","retweeted_status"];
-    class func loadStatus(completion:(statuses:[Status]?) ->()){
-        let params = ["access_token":sharedUserAccount!.access_token! as String];
+    class func loadStatus(since_id: Int,max_id: Int, completion:(statuses:[Status]?) ->()){
+        
+        var params = ["access_token":sharedUserAccount!.access_token! as String];
+        if since_id > 0{
+            params["since_id"] = "\(since_id)";
+        }
+        if max_id > 0{
+            params["max_id"] = "\(max_id - 1)";
+        }
         NetworkTools.requestJSON(.GET, URLString: WB_STATUS, parameters: params) { (JSON) in
             if(JSON == nil){
                 print("请求失败");
@@ -74,6 +81,7 @@ class Status: NSObject {
     //缓存图片
     private class func cacheStatusImage(statuses:[Status]?, completion:(statuses:[Status]?) ->()){
         if(statuses == nil){
+            completion(statuses: nil);
             return;
         }
         //建立一个dispatch_group 可以监听一组异步完成后 得到统一的通知

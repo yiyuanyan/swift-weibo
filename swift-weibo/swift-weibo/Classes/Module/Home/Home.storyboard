@@ -390,7 +390,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0G0-0g-a7R" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZ0-Ch-f3i">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZ0-Ch-f3i" customClass="HomeNavigationBar" customModule="swift_weibo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

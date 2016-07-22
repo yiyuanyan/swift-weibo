@@ -61,6 +61,7 @@
 		3598A49B1D348B620075B2D1 /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3598A49A1D348B620075B2D1 /* UIStoryboard+extension.swift */; };
 		3598A4A41D34C61D0075B2D1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3598A4A31D34C61D0075B2D1 /* Status.swift */; };
 		3598F4731D34836B0077F520 /* PopOverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3598F4721D34836B0077F520 /* PopOverAnimatior.swift */; };
+		359A282E1D4212280024B4F4 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A282D1D4212280024B4F4 /* HomeNavigationBar.swift */; };
 		35AC613D1D3375E900D5835F /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */; };
 		35AC613F1D33782900D5835F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC613E1D33782900D5835F /* PopOverViewController.swift */; };
 		35BE93611D407AF3001C6BB1 /* WBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE93601D407AF3001C6BB1 /* WBRefreshControl.swift */; };
@@ -172,6 +173,7 @@
 		3598A49A1D348B620075B2D1 /* UIStoryboard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+extension.swift"; path = "swift-weibo/Classes/Module/Home/Popover/UIStoryboard+extension.swift"; sourceTree = SOURCE_ROOT; };
 		3598A4A31D34C61D0075B2D1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		3598F4721D34836B0077F520 /* PopOverAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverAnimatior.swift; sourceTree = "<group>"; };
+		359A282D1D4212280024B4F4 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		35AC613C1D3375E900D5835F /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		35AC613E1D33782900D5835F /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		35BE93601D407AF3001C6BB1 /* WBRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRefreshControl.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				357E067F1D36125400B2938A /* StatusCell.swift */,
 				357C4A381D2524F3008D2B11 /* HomeViewController.swift */,
 				35DC73981D33375C00057F46 /* HomtTitleButton.swift */,
+				359A282D1D4212280024B4F4 /* HomeNavigationBar.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				35CE7CD71D2F7562000A2D5A /* SDWebImageDecoder.m in Sources */,
 				3598A4A41D34C61D0075B2D1 /* Status.swift in Sources */,
 				357E067E1D35E25700B2938A /* NetworkTools.swift in Sources */,
+				359A282E1D4212280024B4F4 /* HomeNavigationBar.swift in Sources */,
 				3583060B1D2B8A1D0074D497 /* Error.swift in Sources */,
 				353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */,
 				3568D8191D2CAB9D0042C448 /* SVProgressAnimatedView.m in Sources */,
