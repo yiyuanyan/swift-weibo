@@ -1,8 +1,175 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jq5-tF-Yl7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Compose View Controller-->
+        <scene sceneID="D1b-pD-CoF">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oCa-w9-YMD" customClass="ComposeViewController" customModule="swift_weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YXf-F5-GWo"/>
+                        <viewControllerLayoutGuide type="bottom" id="CZu-f7-EiX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E7f-yc-Cts">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mfr-3x-slG">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oCa-w9-YMD" id="lcN-M6-4aA"/>
+                                </connections>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7a-xF-tms">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VXd-YE-9eA"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="qt9-db-wQK">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6f6-m9-Bln">
+                                            <rect key="frame" x="20" y="10" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="compose_toolbar_picture"/>
+                                            <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="F4M-0b-Hde"/>
+                                    <barButtonItem style="plain" id="YXx-JI-lDy">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ooC-c5-Dpf">
+                                            <rect key="frame" x="150" y="10" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="compose_mentionbutton_background"/>
+                                            <state key="highlighted" image="compose_mentionbutton_background_highlighted"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wve-Gh-e2r"/>
+                                    <barButtonItem style="plain" id="4ac-ej-kei">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0bo-d4-lKQ">
+                                            <rect key="frame" x="280" y="10" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="compose_trendbutton_background"/>
+                                            <state key="highlighted" image="compose_trendbutton_background_highlighted"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="31P-gI-dZt"/>
+                                    <barButtonItem style="plain" id="HEG-Ud-xOJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8nq-24-Sb5">
+                                            <rect key="frame" x="410" y="10" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="compose_emoticonbutton_background"/>
+                                            <state key="highlighted" image="compose_emoticonbutton_background_highlighted"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nzC-z5-vbI"/>
+                                    <barButtonItem style="plain" id="JoW-IF-IEq">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QVh-lE-7NH">
+                                            <rect key="frame" x="540" y="10" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="compose_keyboardbutton_background"/>
+                                            <state key="highlighted" image="compose_keyboardbutton_background_highlighted"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.83319698949999998" green="0.83319698949999998" blue="0.83319698949999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mfr-3x-slG" firstAttribute="leading" secondItem="E7f-yc-Cts" secondAttribute="leadingMargin" constant="-20" id="62x-X7-bsT"/>
+                            <constraint firstItem="Mfr-3x-slG" firstAttribute="top" secondItem="YXf-F5-GWo" secondAttribute="bottom" id="S5S-uh-LBw"/>
+                            <constraint firstItem="L7a-xF-tms" firstAttribute="leading" secondItem="E7f-yc-Cts" secondAttribute="leadingMargin" constant="-20" id="VCe-7f-ahB"/>
+                            <constraint firstItem="L7a-xF-tms" firstAttribute="top" secondItem="Mfr-3x-slG" secondAttribute="bottom" id="nx4-Cq-L7r"/>
+                            <constraint firstItem="CZu-f7-EiX" firstAttribute="top" secondItem="L7a-xF-tms" secondAttribute="bottom" id="rqc-YC-APq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mfr-3x-slG" secondAttribute="trailing" constant="-20" id="tMW-qC-nc5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L7a-xF-tms" secondAttribute="trailing" constant="-20" id="ybA-Dr-JVE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tci-tY-uMh">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="S1Z-BJ-1ii">
+                            <connections>
+                                <action selector="close:" destination="oCa-w9-YMD" id="Reu-IA-vMA"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="lOA-gM-sj7" userLabel="标题栏">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发微博" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq8-t9-rkk">
+                                    <rect key="frame" x="98" y="0.0" width="45" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soR-Ya-SjW">
+                                    <rect key="frame" x="105" y="17" width="31" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="mq8-t9-rkk" firstAttribute="top" secondItem="lOA-gM-sj7" secondAttribute="top" id="KfD-GZ-DoN"/>
+                                <constraint firstItem="mq8-t9-rkk" firstAttribute="centerX" secondItem="lOA-gM-sj7" secondAttribute="centerX" id="RYF-oy-gm8"/>
+                                <constraint firstItem="soR-Ya-SjW" firstAttribute="centerX" secondItem="lOA-gM-sj7" secondAttribute="centerX" id="ch3-Vu-Eno"/>
+                                <constraint firstAttribute="bottom" secondItem="soR-Ya-SjW" secondAttribute="bottom" constant="1" id="sGu-gj-BbM"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="发送" id="Z6I-XV-zTm">
+                            <connections>
+                                <action selector="sendStatus:" destination="oCa-w9-YMD" id="dOA-Jz-JPe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="soR-Ya-SjW" id="fsc-Uq-IPm"/>
+                        <outlet property="sendBarItem" destination="Z6I-XV-zTm" id="ack-hZ-ZdC"/>
+                        <outlet property="textView" destination="Mfr-3x-slG" id="Qn5-fu-go2"/>
+                        <outlet property="toolBarBottomConstraints" destination="rqc-YC-APq" id="Kng-Hz-Pap"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdg-zN-9YV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="443"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tCk-nK-JW7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jq5-tF-Yl7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ydw-fS-whH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oCa-w9-YMD" kind="relationship" relationship="rootViewController" id="PbM-ay-NIX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gz-Sp-6oS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="443"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_keyboardbutton_background" width="24" height="24"/>
+        <image name="compose_keyboardbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_toolbar_picture_highlighted" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+        <image name="compose_trendbutton_background_highlighted" width="24" height="24"/>
+    </resources>
 </document>

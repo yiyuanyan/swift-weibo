@@ -20,6 +20,8 @@ class MainViewController: UITabBarController {
     //按钮点击
     func composeBtnDidClick(sender:UIButton){
         print(#function);
+        let VC = UIStoryboard.initalViewController("Compose");
+        presentViewController(VC, animated: true, completion: nil);
     }
     //添加所有的子视图控制器
     private func addChildViewControllers(){
