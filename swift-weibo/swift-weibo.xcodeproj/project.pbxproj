@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350FF9D81D47596400BA8C28 /* PictureSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FF9D71D47596400BA8C28 /* PictureSelectViewController.swift */; };
 		352743F11D2E1D3A007F0BB8 /* NewFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352743F01D2E1D3A007F0BB8 /* NewFeature.storyboard */; };
 		352743F31D2E1D86007F0BB8 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352743F21D2E1D86007F0BB8 /* NewFeatureViewController.swift */; };
 		353D6F0C1D2519D200F9CBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353D6F0B1D2519D200F9CBA2 /* AppDelegate.swift */; };
@@ -86,6 +87,7 @@
 		35CE7CE21D2F7562000A2D5A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CE7CD21D2F7562000A2D5A /* UIView+WebCacheOperation.m */; };
 		35DC73991D33375C00057F46 /* HomtTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC73981D33375C00057F46 /* HomtTitleButton.swift */; };
 		35F747FC1D2A5A1E00DF7E31 /* VistorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */; };
+		35FB1E801D47695B00EC0DC5 /* PictureSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB1E7F1D47695B00EC0DC5 /* PictureSelectCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		350FF9D71D47596400BA8C28 /* PictureSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSelectViewController.swift; sourceTree = "<group>"; };
 		352743F01D2E1D3A007F0BB8 /* NewFeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewFeature.storyboard; sourceTree = "<group>"; };
 		352743F21D2E1D86007F0BB8 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		353D6F081D2519D200F9CBA2 /* swift-weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-weibo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +219,7 @@
 		35DC73981D33375C00057F46 /* HomtTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomtTitleButton.swift; sourceTree = "<group>"; };
 		35F747FB1D2A5A1E00DF7E31 /* VistorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorLoginView.swift; sourceTree = "<group>"; };
 		35F747FD1D2A61D700DF7E31 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		35FB1E7F1D47695B00EC0DC5 /* PictureSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSelectCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +376,8 @@
 			children = (
 				357C4A3E1D252611008D2B11 /* Compose.storyboard */,
 				357C4A421D252658008D2B11 /* ComposeViewController.swift */,
+				350FF9D71D47596400BA8C28 /* PictureSelectViewController.swift */,
+				35FB1E7F1D47695B00EC0DC5 /* PictureSelectCell.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				3568D8191D2CAB9D0042C448 /* SVProgressAnimatedView.m in Sources */,
 				358306191D2B8A1D0074D497 /* Timeline.swift in Sources */,
 				35CE7CDF1D2F7562000A2D5A /* UIImage+WebP.m in Sources */,
+				350FF9D81D47596400BA8C28 /* PictureSelectViewController.swift in Sources */,
 				3598A49B1D348B620075B2D1 /* UIStoryboard+extension.swift in Sources */,
 				3568D8181D2CAB9D0042C448 /* SVIndefiniteAnimatedView.m in Sources */,
 				35CE7CD91D2F7562000A2D5A /* SDWebImageDownloaderOperation.m in Sources */,
@@ -734,6 +741,7 @@
 				35CE7CE11D2F7562000A2D5A /* UIImageView+WebCache.m in Sources */,
 				358306131D2B8A1D0074D497 /* Request.swift in Sources */,
 				35CE7CE21D2F7562000A2D5A /* UIView+WebCacheOperation.m in Sources */,
+				35FB1E801D47695B00EC0DC5 /* PictureSelectCell.swift in Sources */,
 				358306091D2B8A1D0074D497 /* Alamofire.swift in Sources */,
 				3583060A1D2B8A1D0074D497 /* Download.swift in Sources */,
 				358306111D2B8A1D0074D497 /* Notifications.swift in Sources */,

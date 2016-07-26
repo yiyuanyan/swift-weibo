@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mfr-3x-slG">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="201"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -27,6 +27,16 @@
                                     <outlet property="delegate" destination="oCa-w9-YMD" id="lcN-M6-4aA"/>
                                 </connections>
                             </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDd-eC-L0p" userLabel="照片选择容器视图">
+                                <rect key="frame" x="0.0" y="265" width="600" height="291"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="291" id="T89-up-tkQ"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="P2Z-4Q-Dtk" kind="embed" id="svX-Md-kSw"/>
+                                </connections>
+                            </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7a-xF-tms">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
@@ -39,6 +49,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="compose_toolbar_picture"/>
                                             <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                            <connections>
+                                                <action selector="selectPicture:" destination="oCa-w9-YMD" eventType="touchUpInside" id="cuR-Xf-PI5"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="F4M-0b-Hde"/>
@@ -84,9 +97,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mfr-3x-slG" firstAttribute="leading" secondItem="E7f-yc-Cts" secondAttribute="leadingMargin" constant="-20" id="62x-X7-bsT"/>
+                            <constraint firstAttribute="trailing" secondItem="wDd-eC-L0p" secondAttribute="trailing" id="BVp-S1-32X"/>
+                            <constraint firstItem="L7a-xF-tms" firstAttribute="top" secondItem="wDd-eC-L0p" secondAttribute="bottom" id="H1t-kH-lqy"/>
                             <constraint firstItem="Mfr-3x-slG" firstAttribute="top" secondItem="YXf-F5-GWo" secondAttribute="bottom" id="S5S-uh-LBw"/>
+                            <constraint firstItem="wDd-eC-L0p" firstAttribute="top" secondItem="Mfr-3x-slG" secondAttribute="bottom" id="URc-fJ-vQ2"/>
                             <constraint firstItem="L7a-xF-tms" firstAttribute="leading" secondItem="E7f-yc-Cts" secondAttribute="leadingMargin" constant="-20" id="VCe-7f-ahB"/>
-                            <constraint firstItem="L7a-xF-tms" firstAttribute="top" secondItem="Mfr-3x-slG" secondAttribute="bottom" id="nx4-Cq-L7r"/>
+                            <constraint firstItem="wDd-eC-L0p" firstAttribute="leading" secondItem="E7f-yc-Cts" secondAttribute="leading" id="hrl-W4-v79"/>
                             <constraint firstItem="CZu-f7-EiX" firstAttribute="top" secondItem="L7a-xF-tms" secondAttribute="bottom" id="rqc-YC-APq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mfr-3x-slG" secondAttribute="trailing" constant="-20" id="tMW-qC-nc5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L7a-xF-tms" secondAttribute="trailing" constant="-20" id="ybA-Dr-JVE"/>
@@ -132,6 +148,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="soR-Ya-SjW" id="fsc-Uq-IPm"/>
+                        <outlet property="pictureViewHeightContraint" destination="T89-up-tkQ" id="jbu-pn-sHX"/>
                         <outlet property="sendBarItem" destination="Z6I-XV-zTm" id="ack-hZ-ZdC"/>
                         <outlet property="textView" destination="Mfr-3x-slG" id="Qn5-fu-go2"/>
                         <outlet property="toolBarBottomConstraints" destination="rqc-YC-APq" id="Kng-Hz-Pap"/>
@@ -140,6 +157,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdg-zN-9YV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1564" y="443"/>
+        </scene>
+        <!--Picture Select View Controller-->
+        <scene sceneID="gFY-K0-n4R">
+            <objects>
+                <collectionViewController id="P2Z-4Q-Dtk" customClass="PictureSelectViewController" customModule="swift_weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CKh-so-3Te">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="291"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y5e-QU-Lv3">
+                            <size key="itemSize" width="70" height="70"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureSelectCell" id="WtY-wy-Tee" customClass="PictureSelectCell" customModule="swift_weibo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YF-2v-oag" userLabel="添加按钮">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <state key="normal" image="compose_pic_add"/>
+                                            <state key="highlighted" image="compose_pic_add_highlighted"/>
+                                            <connections>
+                                                <action selector="selectedPicture:" destination="WtY-wy-Tee" eventType="touchUpInside" id="b3a-Rk-EYS"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzE-fs-8S9" userLabel="删除按钮">
+                                            <rect key="frame" x="46" y="0.0" width="24" height="24"/>
+                                            <state key="normal" image="compose_photo_close"/>
+                                            <connections>
+                                                <action selector="removePicture:" destination="WtY-wy-Tee" eventType="touchUpInside" id="huB-U5-Vaq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="kzE-fs-8S9" firstAttribute="top" secondItem="6YF-2v-oag" secondAttribute="top" id="3at-Jf-S37"/>
+                                    <constraint firstItem="kzE-fs-8S9" firstAttribute="trailing" secondItem="6YF-2v-oag" secondAttribute="trailing" id="8fx-4b-NTc"/>
+                                    <constraint firstAttribute="bottom" secondItem="6YF-2v-oag" secondAttribute="bottom" id="Fej-B8-GPg"/>
+                                    <constraint firstItem="6YF-2v-oag" firstAttribute="leading" secondItem="WtY-wy-Tee" secondAttribute="leading" id="QDO-mf-3OS"/>
+                                    <constraint firstItem="6YF-2v-oag" firstAttribute="top" secondItem="WtY-wy-Tee" secondAttribute="top" id="Sfl-7m-aqv"/>
+                                    <constraint firstAttribute="trailing" secondItem="6YF-2v-oag" secondAttribute="trailing" id="pW7-zw-xH3"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="P2Z-4Q-Dtk" id="4F0-jz-NZG"/>
+                            <outlet property="delegate" destination="P2Z-4Q-Dtk" id="l1v-h4-dNH"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CLu-LU-d98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2245" y="443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCk-nK-JW7">
@@ -167,6 +244,9 @@
         <image name="compose_keyboardbutton_background_highlighted" width="24" height="24"/>
         <image name="compose_mentionbutton_background" width="24" height="24"/>
         <image name="compose_mentionbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_photo_close" width="24" height="24"/>
+        <image name="compose_pic_add" width="70" height="70"/>
+        <image name="compose_pic_add_highlighted" width="70" height="70"/>
         <image name="compose_toolbar_picture" width="24" height="24"/>
         <image name="compose_toolbar_picture_highlighted" width="24" height="24"/>
         <image name="compose_trendbutton_background" width="24" height="24"/>

@@ -12,6 +12,12 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
 
 
     @IBOutlet weak var sendBarItem: UIBarButtonItem!
+    
+    @IBOutlet weak var pictureViewHeightContraint: NSLayoutConstraint!
+    
+    
+    
+    
     @IBOutlet weak var toolBarBottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
     lazy var placeHolderLabel:UILabel = {
@@ -39,10 +45,12 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
+        
         textView.becomeFirstResponder();
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated);
+        
         textView.resignFirstResponder();
     }
     private func regNotification(){
@@ -50,6 +58,7 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ComposeViewController.KeyBoardWillChange(_:)), name: UIKeyboardWillHideNotification, object: nil);
     }
     private func setUpUI(){
+        self.pictureViewHeightContraint.constant = 0;
         nameLabel.text = sharedUserAccount?.name;
         //添加站位文本
         textView.addSubview(placeHolderLabel);
@@ -96,5 +105,14 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
         }
         return true;
     }
+    
+    
+    @IBAction func selectPicture(sender: AnyObject) {
+        //图片选择器高度占屏幕高度的1/3
+        self.pictureViewHeightContraint.constant = UIScreen.mainScreen().bounds.height / 3;
+        textView.resignFirstResponder();
+    }
+    
+    
 
 }
