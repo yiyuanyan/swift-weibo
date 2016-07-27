@@ -9,14 +9,14 @@
 import UIKit
 
 class ComposeViewController: UIViewController,UITextViewDelegate {
-
+    var maxStatusLength = 140;
 
     @IBOutlet weak var sendBarItem: UIBarButtonItem!
     
     @IBOutlet weak var pictureViewHeightContraint: NSLayoutConstraint!
     
     
-    
+    var pictureSelectVC: PictureSelectViewController?
     
     @IBOutlet weak var toolBarBottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
@@ -33,6 +33,26 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
         dismissViewControllerAnimated(true, completion: nil);
     }
     @IBAction func sendStatus(sender: AnyObject) {
+        let statusText = textView.text;
+        if statusText.characters.count > 140 {
+            SVProgressHUD.showInfoWithStatus("文本内容过长");
+            return;
+        }
+        
+        var urlString = "https://api.weibo.com/2/statuses/update.json";
+        if (pictureSelectVC?.pictureList.count != 0){
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json";
+            let image = pictureSelectVC?.pictureList[0];
+            let imageData = UIImagePNGRepresentation(image!);
+            NetworkTools.uploadImage(urlString, status: statusText, imageData: imageData!);
+        }else{
+        //发送纯文本
+            let parmas = ["access_token":sharedUserAccount?.access_token,"status":statusText];
+            NetworkTools.requestJSON(.POST, URLString: urlString, parameters: parmas) { (JSON) in
+                SVProgressHUD.showInfoWithStatus("发布成功");
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }
+        }
     }
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
@@ -42,11 +62,18 @@ class ComposeViewController: UIViewController,UITextViewDelegate {
         //注册键盘通知
         regNotification();
         // Do any additional setup after loading the view.
+        for vc in childViewControllers as [UIViewController]{
+            if vc is PictureSelectViewController{
+                pictureSelectVC = vc as? PictureSelectViewController;
+            }
+        }
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
+        if pictureSelectVC?.pictureList.count == 0{
+            textView.becomeFirstResponder();
+        }
         
-        textView.becomeFirstResponder();
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated);

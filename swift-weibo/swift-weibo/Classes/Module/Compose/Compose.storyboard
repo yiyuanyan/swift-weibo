@@ -206,6 +206,10 @@
                                     <constraint firstItem="6YF-2v-oag" firstAttribute="top" secondItem="WtY-wy-Tee" secondAttribute="top" id="Sfl-7m-aqv"/>
                                     <constraint firstAttribute="trailing" secondItem="6YF-2v-oag" secondAttribute="trailing" id="pW7-zw-xH3"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="pictureButton" destination="6YF-2v-oag" id="4Gm-pP-LRQ"/>
+                                    <outlet property="removeButton" destination="kzE-fs-8S9" id="QGt-4e-xV4"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
